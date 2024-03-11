@@ -10,14 +10,6 @@
              </a>
          </li><!-- End Dashboard Nav -->
 
-
-         <li class="nav-item">
-             <a class="nav-link collapsed" href="<?= base_url('profil'); ?>">
-                 <i class="bi bi-person"></i>
-                 <span>Profil</span>
-             </a>
-         </li><!-- End Profile Page Nav -->
-
          <li class="nav-item">
              <a class="nav-link collapsed" href="<?= base_url('surat'); ?>">
                  <i class="bi bi-envelope"></i>

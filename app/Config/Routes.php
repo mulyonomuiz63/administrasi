@@ -5,19 +5,36 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Admin\Home::index');
-$routes->get('profil', 'Admin\Profil::index');
 
-$routes->get('surat', 'Admin\Surat::index');
+$routes->get('registrasi', 'Front\Registrasi::index', ['filter' => 'guestFilter']);
+$routes->post('simpanRegistrasi', 'Front\Registrasi::simpanRegistrasi', ['filter' => 'guestFilter']);
+$routes->get('verifikasi/(:any)', 'Front\Registrasi::verifikasi/$1', ['filter' => 'guestFilter']);
 
-$routes->get('perjanjian', 'Admin\Perjanjian::index');
+$routes->get('lupapassword', 'Front\Registrasi::lupapassword', ['filter' => 'guestFilter']);
+$routes->post('resetPassword', 'Front\Registrasi::resetPassword', ['filter' => 'guestFilter']);
 
-$routes->get('invoice', 'Admin\Invoice::index');
 
-$routes->get('pengaturan', 'Admin\Pengaturan::index');
+$routes->get('login', 'Front\Login::index', ['filter' => 'guestFilter']);
+$routes->get('keluar', 'Front\Login::keluar', ['filter' => 'authFilter']);
+$routes->post('login/cek_login', 'Front\Login::cek_login', ['filter' => 'guestFilter']);
+
+
+
+$routes->get('/', 'Admin\Home::index', ['filter' => 'authFilter']);
+$routes->get('dashboard', 'Admin\Home::index', ['filter' => 'authFilter']);
+
+$routes->get('surat', 'Admin\Surat::index', ['filter' => 'authFilter']);
+
+$routes->get('perjanjian', 'Admin\Perjanjian::index', ['filter' => 'authFilter']);
+
+$routes->get('invoice', 'Admin\Invoice::index', ['filter' => 'authFilter']);
+
+$routes->get('pengaturan', 'Admin\Pengaturan::index', ['filter' => 'authFilter']);
 
 //registrasi
-$routes->get('registrasi', 'Registrasi::index');
+$routes->get('registrasi', 'Registrasi::index', ['filter' => 'authFilter']);
+$routes->get('lupa-password', 'Registrasi::lupaPassword', ['filter' => 'authFilter']);
+
 
 //login
-$routes->get('login', 'Login::index');
+$routes->get('login', 'Login::index', ['filter' => 'authFilter']);

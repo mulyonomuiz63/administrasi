@@ -41,8 +41,8 @@
                                 <button class="btn btn-primary w-100" type="submit">Login</button>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="pages-register.html">Lupa Password?</a><br>
-                                <a class="small" href="pages-register.html">Belum punya akun? Registrasi disini</a>
+                                <a class="small" href="<?= base_url('lupa-password'); ?>">Lupa Password?</a><br>
+                                <a class="small" href="<?= base_url('registrasi'); ?>">Belum punya akun? Registrasi disini</a>
                             </div>
                         </form>
 

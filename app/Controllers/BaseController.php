@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Front\M_login;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -27,6 +28,12 @@ abstract class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
+    protected $session;
+    protected $db;
+    protected $encrypt;
+    protected $email;
+    protected $image;
+    protected $uri;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -36,7 +43,7 @@ abstract class BaseController extends Controller
      * @var array
      */
     protected $helpers = ['form', 'file', 'url', 'html', 'download', 'm_helper'];
-
+    protected $m_login;
     /**
      * Be sure to declare properties for any property fetch you initialized.
      * The creation of dynamic property is deprecated in PHP 8.2.
@@ -54,5 +61,20 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = \Config\Services::session();
+
+        $this->session = \Config\Services::session();
+        //preload library
+        $config = new \Config\Encryption();
+        $config->key = 'M1pT3zx500uYVodaysN68IiNYhV0KdCb';
+        $config->driver = 'OpenSSL';
+        $this->session =  \Config\Services::session();
+        $this->db = \Config\Database::connect();
+        $this->encrypt = \Config\Services::encrypter($config);
+        $this->email = \Config\Services::email();
+        $this->image = \Config\Services::image();
+        $this->uri = service('uri');
+
+        //custome
+        $this->m_login       = new M_login();
     }
 }
