@@ -13,8 +13,10 @@ class Login extends BaseController
 
     public function cek_login()
     {
-        $string = trim("$this->request->getPost('email')");
-        $password = trim("$this->request->getPost('password')");
+        $email  = $this->request->getPost('email');
+        $pass   = $this->request->getPost('password');
+        $string = trim("$email");
+        $password = trim("$pass");
         $result = "$string";
         $email = preg_replace("/[^a-zA-Z0-9_.@]/", "", $result);
         $row =  preg_match('/\A[a-z0-9__.@]+\z/i', $string);
@@ -51,7 +53,8 @@ class Login extends BaseController
                             );
 
                             $this->session->set($data);
-                            return redirect()->to('pengepul/edit/' . encode(session()->get('iduser')));
+                            return redirect()->to('dashboard');
+                            // return redirect()->to('pengepul/edit/' . encode(session()->get('iduser')));
                         }
                     } else {
                         $pesan = '<div class="alert alert-danger">Lakukan verifikasi email anda! </div>';

@@ -6,7 +6,7 @@ function versi()
     return $versis;
 }
 
-function set_active($uri, $output = 'menu-item-open')
+function set_active($uri, $output = 'collapsed')
 {
     $uris = service('uri');
 
@@ -19,9 +19,10 @@ function set_active($uri, $output = 'menu-item-open')
         }
     } else {
         if ($uris->getSegment(1) == $uri) {
-            return $output;
+            return '';
         }
     }
+    return $output;
 }
 
 function set_active_submenu($uri, $output = 'menu-item-active')

@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\Front\M_login;
+use App\Models\Front\M_lupapassword;
+use App\Models\Front\M_registrasi;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -44,6 +46,8 @@ abstract class BaseController extends Controller
      */
     protected $helpers = ['form', 'file', 'url', 'html', 'download', 'm_helper'];
     protected $m_login;
+    protected $m_registrasi;
+    protected $m_lupapassword;
     /**
      * Be sure to declare properties for any property fetch you initialized.
      * The creation of dynamic property is deprecated in PHP 8.2.
@@ -75,6 +79,8 @@ abstract class BaseController extends Controller
         $this->uri = service('uri');
 
         //custome
-        $this->m_login       = new M_login();
+        $this->m_login          = new M_login();
+        $this->m_registrasi     = new M_registrasi();
+        $this->m_lupapassword   = new M_lupapassword();
     }
 }

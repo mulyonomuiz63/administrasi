@@ -24,7 +24,7 @@
                             echo $pesan;
                         }
                         ?>
-                        <form class="row g-3 form text-left" id="form" method="post" action="<?php echo (site_url('login/cek-login')) ?>">
+                        <form action="<?php echo (site_url('reset-password')) ?>" class="row g-3 form text-left needs-validation" novalidate="" method="post" enctype="multipart/form-data">
                             <?= csrf_field() ?>
                             <div class="col-12">
                                 <label for="Email" class="form-label">Email</label>
@@ -36,18 +36,10 @@
                             </div>
 
                             <div class="col-12">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" class="form-control" id="password" required="">
-                                <div class="invalid-feedback">Password tidak boleh kosong</div>
-                            </div>
-
-
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100" type="submit">Login</button>
+                                <button class="btn btn-primary w-100" type="submit">Reset Password</button>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="<?= base_url('lupa-password'); ?>">Lupa Password?</a><br>
-                                <a class="small" href="<?= base_url('registrasi'); ?>">Belum punya akun? Registrasi disini</a>
+                                <a href=" <?= base_url('login'); ?>">Sudah punya akun? Login disini</a>
                             </div>
                         </form>
 

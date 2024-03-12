@@ -7,16 +7,16 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('registrasi', 'Front\Registrasi::index', ['filter' => 'guestFilter']);
-$routes->post('simpanRegistrasi', 'Front\Registrasi::simpanRegistrasi', ['filter' => 'guestFilter']);
+$routes->post('registrasi/simpan', 'Front\Registrasi::simpan', ['filter' => 'guestFilter']);
 $routes->get('verifikasi/(:any)', 'Front\Registrasi::verifikasi/$1', ['filter' => 'guestFilter']);
 
-$routes->get('lupapassword', 'Front\Registrasi::lupapassword', ['filter' => 'guestFilter']);
-$routes->post('resetPassword', 'Front\Registrasi::resetPassword', ['filter' => 'guestFilter']);
+$routes->get('lupa-password', 'Front\Lupapassword::index', ['filter' => 'guestFilter']);
+$routes->post('reset-password', 'Front\Lupapassword::resetPassword', ['filter' => 'guestFilter']);
 
 
 $routes->get('login', 'Front\Login::index', ['filter' => 'guestFilter']);
 $routes->get('keluar', 'Front\Login::keluar', ['filter' => 'authFilter']);
-$routes->post('login/cek_login', 'Front\Login::cek_login', ['filter' => 'guestFilter']);
+$routes->post('login/cek-login', 'Front\Login::cek_login', ['filter' => 'guestFilter']);
 
 
 
