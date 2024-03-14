@@ -16,30 +16,22 @@
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     <img src="<?php echo base_url('assets/img/user.png') ?>" alt="Profile" class="rounded-circle img-thumbnail">
-                    <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    <span class="d-none d-md-block dropdown-toggle ps-2"><?= substr(session('nama'), 0, 15) ?> <?= strlen(session('nama')) > 15 ? '...' : '' ?></span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
-                        <h6>Kevin Anderson</h6>
-                        <span>Web Designer</span>
+                        <h6><?= substr(session('nama'), 0, 25) . "..." ?></h6>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
                     </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                            <i class="bi bi-person"></i>
-                            <span>Profil</span>
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                        <a class="dropdown-item d-flex align-items-center" href="<?= base_url('pengaturan'); ?>">
                             <i class="bi bi-gear"></i>
                             <span>Pengaturan</span>
                         </a>
@@ -52,7 +44,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" href="<?= base_url('keluar'); ?>">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Keluar</span>
                         </a>

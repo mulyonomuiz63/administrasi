@@ -8,6 +8,8 @@ class Perjanjian extends BaseController
 {
     public function index(): string
     {
-        return view('admin/perjanjian/index');
+        $data['menu'] = 'Perjanjian';
+        $data['aksi'] = '';
+        return view('admin/perjanjian/index', $data);
     }
 }

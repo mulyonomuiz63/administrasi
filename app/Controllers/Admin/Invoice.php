@@ -8,6 +8,8 @@ class Invoice extends BaseController
 {
     public function index(): string
     {
-        return view('admin/invoice/index');
+        $data['menu'] = 'Invoice';
+        $data['aksi'] = '';
+        return view('admin/invoice/index', $data);
     }
 }

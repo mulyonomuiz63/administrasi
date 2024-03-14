@@ -8,6 +8,8 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('admin/layout/template');
+        $data['menu'] = 'Home';
+        $data['aksi'] = '';
+        return view('admin/layout/template', $data);
     }
 }

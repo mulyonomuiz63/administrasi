@@ -30,6 +30,8 @@ $routes->get('perjanjian', 'Admin\Perjanjian::index', ['filter' => 'authFilter']
 $routes->get('invoice', 'Admin\Invoice::index', ['filter' => 'authFilter']);
 
 $routes->get('pengaturan', 'Admin\Pengaturan::index', ['filter' => 'authFilter']);
+$routes->post('pengaturan/ubah/password', 'Admin\Pengaturan::ubahPassword', ['filter' => 'authFilter']);
+
 
 //registrasi
 $routes->get('registrasi', 'Registrasi::index', ['filter' => 'authFilter']);

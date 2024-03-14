@@ -8,6 +8,8 @@ class Surat extends BaseController
 {
     public function index(): string
     {
-        return view('admin/surat/index');
+        $data['menu'] = 'Surat';
+        $data['aksi'] = '';
+        return view('admin/surat/index', $data);
     }
 }

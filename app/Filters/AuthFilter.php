@@ -44,39 +44,37 @@ class AuthFilter implements FilterInterface
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        //
-        // helper('m');
-        // $uris = service('uri');
-        // $url = $uris->getSegment(1);
-        // $total = $uris->getTotalSegments();
-        // if (session()->get('status') != '1') {
-        //     if ($url != 'pengepul') {
-        //         return redirect()->to('pengepul/edit/' . encode(session()->get('iduser')));
-        //     }
-        // }
-        // if ($total == 1) {
-        //     if (!lihat(session()->get('iduser'), "$url")) {
-        //         return redirect()->to('dashboard');
-        //     }
-        // } elseif ($total == 2) {
-        //     if (!tambah(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'tambah') {
-        //         return redirect()->to('dashboard');
-        //     }
-        //     if (!ubah(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'ubah') {
-        //         return redirect()->to('dashboard');
-        //     }
-        //     if (!hapus(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'hapus') {
-        //         return redirect()->to('dashboard');
-        //     }
-        //     if (!aprove(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'aprove') {
-        //         return redirect()->to('dashboard');
-        //     }
-        //     if (!cetak(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'cetak') {
-        //         return redirect()->to('dashboard');
-        //     }
-        //     if (!export(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'export') {
-        //         return redirect()->to('dashboard');
-        //     }
-        // }
+        helper('m');
+        $uris = service('uri');
+        $url = $uris->getSegment(1);
+        $total = $uris->getTotalSegments();
+        if (session()->get('status') != '1') {
+            if ($url != 'pengaturan') {
+                return redirect()->to('pengaturan');
+            }
+        } elseif ($total == 1) {
+            if (!lihat(session()->get('iduser'), "$url")) {
+                return redirect()->to('dashboard');
+            }
+        } elseif ($total == 2) {
+            if (!tambah(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'tambah') {
+                return redirect()->to('dashboard');
+            }
+            if (!ubah(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'ubah') {
+                return redirect()->to('dashboard');
+            }
+            if (!hapus(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'hapus') {
+                return redirect()->to('dashboard');
+            }
+            if (!aprove(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'aprove') {
+                return redirect()->to('dashboard');
+            }
+            if (!cetak(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'cetak') {
+                return redirect()->to('dashboard');
+            }
+            if (!export(session()->get('iduser'), "$url") && $uris->getSegment(2) == 'export') {
+                return redirect()->to('dashboard');
+            }
+        }
     }
 }
