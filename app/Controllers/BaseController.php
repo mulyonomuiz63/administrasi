@@ -17,6 +17,10 @@ use App\Models\Front\M_registrasi;
 
 //admin
 use App\Models\Admin\M_pengaturan;
+use App\Models\Admin\M_menu;
+use App\Models\Admin\M_menurole;
+use App\Models\Admin\M_role;
+use App\Models\Admin\M_user;
 
 /**
  * Class BaseController
@@ -58,6 +62,10 @@ abstract class BaseController extends Controller
 
     //admin
     protected $m_pengaturan;
+    protected $m_menurole;
+    protected $m_menu;
+    protected $m_role;
+    protected $m_user;
     /**
      * Be sure to declare properties for any property fetch you initialized.
      * The creation of dynamic property is deprecated in PHP 8.2.
@@ -92,6 +100,12 @@ abstract class BaseController extends Controller
         $this->m_login          = new M_login();
         $this->m_registrasi     = new M_registrasi();
         $this->m_lupapassword   = new M_lupapassword();
+
+        //admin
         $this->m_pengaturan      = new M_pengaturan();
+        $this->m_menurole       = new M_menurole();
+        $this->m_menu       = new M_menu();
+        $this->m_role       = new M_role();
+        $this->m_user       = new M_user();
     }
 }

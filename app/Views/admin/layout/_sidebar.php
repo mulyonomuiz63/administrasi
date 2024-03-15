@@ -43,6 +43,34 @@
                 </a>
             </li><!-- End Login Page Nav -->
         <?php endif; ?>
+
+        <!-- <li class="nav-item">
+            <a class="nav-link " data-bs-target="#role-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-shield-lock"></i><span>Role</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="role-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="<?= base_url('user'); ?>" class="active">
+                        <i class="bi bi-circle"></i><span>User</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= base_url('menu'); ?>" class="active">
+                        <i class="bi bi-circle"></i><span>Menu</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= base_url('menu-role'); ?>">
+                        <i class="bi bi-circle"></i><span>Menu Role</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= base_url('role'); ?>">
+                        <i class="bi bi-circle"></i><span>Role</span>
+                    </a>
+                </li>
+            </ul>
+        </li> -->
     </ul>
 
 </aside>
